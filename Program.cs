@@ -28,16 +28,22 @@ double vegeredmeny = 0;
 
 string status = "Nem vagy jogosult kedvezményre!";
 
+double alaposszeg= (popcorn * popcornAr) + jegyar;
+
 if (vanDiak==true || kor<18)
 {
-    vegeredmeny = ((popcorn*popcornAr)+jegyar)*((100-(0.2*100))/100);
+    vegeredmeny = alaposszeg*((100-(0.2*100))/100);
     status = "Jogosult vagy 20% kedvezményre!";
     
 } else
 {
-    vegeredmeny = (popcorn * popcornAr) + jegyar;
+    vegeredmeny = alaposszeg;
 
 }
 
-
+Console.WriteLine($"Vasárló neve: {nev} ({kor} éves)");
+Console.WriteLine($"Rendelés: 1 db Mozijegy + {popcorn} db Popcorn");
+Console.WriteLine($"Alapösszeg: {alaposszeg:F0} Ft");
+Console.WriteLine($"Fizetendő végösszeg: {vegeredmeny:F0} Ft");
+Console.WriteLine($"Státusz: {status}");
 
