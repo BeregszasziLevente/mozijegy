@@ -24,5 +24,20 @@ int popcorn=int.Parse(Console.ReadLine());
 Console.Write("A popcorn egységára: ");
 int popcornAr=int.Parse(Console.ReadLine());
 
-double kedvezmeny = 0.0;
+double vegeredmeny = 0;
+
+string status = "Nem vagy jogosult kedvezményre!";
+
+if (vanDiak==true || kor<18)
+{
+    vegeredmeny = ((popcorn*popcornAr)+jegyar)*((100-(0.2*100))/100);
+    status = "Jogosult vagy 20% kedvezményre!";
+    
+} else
+{
+    vegeredmeny = (popcorn * popcornAr) + jegyar;
+
+}
+
+
 
